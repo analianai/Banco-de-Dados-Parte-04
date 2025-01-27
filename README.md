@@ -32,11 +32,11 @@ Criadas pelo desenvolvedor para executar operações específicas e personalizad
 - Estrutura de uma Função no SQL
 - Uma função definida pelo usuário (UDF) geralmente segue esta estrutura básica:
 
-Definir o nome da função.
-Declarar os parâmetros de entrada.
-Definir o tipo de dado de retorno.
-Escrever o bloco de código para executar a lógica.
-Especificar o valor de retorno.
+Definir o nome da função.<br>
+Declarar os parâmetros de entrada.<br>
+Definir o tipo de dado de retorno.<br>
+Escrever o bloco de código para executar a lógica.<br>
+Especificar o valor de retorno.<br>
 Exemplo genérico de uma função no MySQL:
 
 ````sql
@@ -66,12 +66,11 @@ NOT DETERMINISTIC: Pode retornar resultados diferentes dependendo de fatores ext
 Uso em Consultas:
 
 Funções podem ser usadas diretamente em instruções SELECT, WHERE, ORDER BY e outras.
+
 Exemplo:
 
 ````sql
-
 SELECT nome_da_funcao(10, 20) AS resultado;
-
 ````
 
 ### Benefícios de Usar Funções
@@ -85,10 +84,8 @@ SELECT nome_da_funcao(10, 20) AS resultado;
 Passo 01: Criar o banco de dados
 
 ````sql
-
 CREATE DATABASE exemplo_funcao;
 USE exemplo_funcao;
-
 ````
 
 CREATE DATABASE exemplo_funcao: Cria um banco de dados chamado exemplo_funcao.<br>
@@ -108,30 +105,26 @@ BEGIN
 END $$
 
 DELIMITER ;
-
 ````
 
 Passo 03: Testar a função<br>
 Agora, você pode chamar a função usando o comando SELECT:
 
 ````sql
-
 SELECT soma(10, 20) AS resultado;
-
 ````
 
 O Mysql retornará:
 
-
 ````diff
-
 +-----------+
 | resultado |
 +-----------+
 |        30 |
 +-----------+
-
 ````
+
+### Exemplo com a função sum()
 
 Exemplo de uma função no MySQL que utiliza a função agregadora SUM() para calcular o total de valores em uma coluna específica de uma tabela. Suponha que temos uma tabela chamada vendas com a seguinte estrutura:
 
@@ -153,14 +146,13 @@ VALUES
     (102, 200.00, '2025-01-02'),
     (101, 300.00, '2025-01-03'),
     (103, 100.00, '2025-01-04');
-
 ````
+
 #### Função: Total de Vendas por Cliente
 
 A função abaixo recebe um cliente_id como parâmetro e retorna o total de vendas desse cliente utilizando SUM().
 
 ````sql
-
 DELIMITER $$
 
 CREATE FUNCTION total_vendas_cliente (id_cliente INT)
@@ -180,7 +172,6 @@ BEGIN
 END $$
 
 DELIMITER ;
-
 ````
 
 ### Explicação da Função
@@ -188,25 +179,27 @@ DELIMITER ;
 #### Parâmetro:
 
 - id_cliente: Identifica o cliente cujas vendas devem ser somadas.
-Variável:
+
+#### Variável:
 
 - total: Armazena temporariamente a soma calculada.
-Query:
+
+#### Query:
 
 - SELECT SUM(valor) INTO total: Soma os valores da coluna valor para o cliente_id informado.
-Retorno:
+
+#### Retorno:
 
 - Retorna o valor calculado da variável total.
 
-Testando a Função
+#### Testando a Função
 
 Para testar a função, use o comando SELECT:
 
 ````sql
-
 SELECT total_vendas_cliente(101) AS total_vendas;
-
 ````
+
 #### Resultado:
 
 ````diff
@@ -216,4 +209,7 @@ SELECT total_vendas_cliente(101) AS total_vendas;
 |       450.00 |
 +--------------+
 ````
+
 Este comando calcula o total de vendas (150.00 + 300.00 = 450.00) para o cliente com cliente_id = 101.
+
+

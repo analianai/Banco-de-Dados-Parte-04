@@ -61,8 +61,8 @@ DELIMITER ;
 
 - Deterministicidade:
 
-DETERMINISTIC: Retorna sempre o mesmo valor para os mesmos inputs.
-NOT DETERMINISTIC: Pode retornar resultados diferentes dependendo de fatores externos (ex.: data/hora atual).
+DETERMINISTIC: Retorna sempre o mesmo valor para os mesmos inputs.<br>
+NOT DETERMINISTIC: Pode retornar resultados diferentes dependendo de fatores externos (ex.: data/hora atual).<br>
 Uso em Consultas:
 
 Funções podem ser usadas diretamente em instruções SELECT, WHERE, ORDER BY e outras.
@@ -91,10 +91,10 @@ USE exemplo_funcao;
 
 ````
 
-CREATE DATABASE exemplo_funcao: Cria um banco de dados chamado exemplo_funcao.
+CREATE DATABASE exemplo_funcao: Cria um banco de dados chamado exemplo_funcao.<br>
 USE exemplo_funcao: Seleciona esse banco para ser usado nos comandos subsequentes.
 
-Passo 02: Criar a função dentro do banco
+Passo 02: Criar a função dentro do banco <br>
 Após selecionar o banco, você pode criar a função como antes. Por exemplo:
 
 ````sql
@@ -111,7 +111,7 @@ DELIMITER ;
 
 ````
 
-Passo 03: Testar a função
+Passo 03: Testar a função<br>
 Agora, você pode chamar a função usando o comando SELECT:
 
 ````sql
@@ -133,9 +133,9 @@ O Mysql retornará:
 
 ````
 
-exemplo de uma função no MySQL que utiliza a função agregadora SUM() para calcular o total de valores em uma coluna específica de uma tabela. Suponha que temos uma tabela chamada vendas com a seguinte estrutura:
+Exemplo de uma função no MySQL que utiliza a função agregadora SUM() para calcular o total de valores em uma coluna específica de uma tabela. Suponha que temos uma tabela chamada vendas com a seguinte estrutura:
 
-Estrutura da Tabela vendas
+#### Estrutura da Tabela vendas
 
 ![Tabela vendas](assets/function%20png.png)
 
@@ -199,6 +199,7 @@ Retorno:
 - Retorna o valor calculado da variável total.
 
 Testando a Função
+
 Para testar a função, use o comando SELECT:
 
 ````sql
